@@ -2,6 +2,7 @@
     "name": "flexpress/plugin-framework",
     "description": "FlexPress based plugin",
     "minimum-stability": "stable",
+    "type": "project",
     "license": "MIT",
     "scripts": {
         "post-install-cmd": [
