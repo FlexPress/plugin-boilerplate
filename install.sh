@@ -1,5 +1,7 @@
 #! /bin/bash
 
+INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 if [ -f .installdone ]
 then
     echo -e "Error, installer has already been ran, if something went wrong please re-download the project\n";
@@ -26,18 +28,22 @@ while true; do
     fi
 done
 
-echo -e "Righto, lets create a plugin called component-$pluginName\n";
+echo -e "Righto, lets create a plugin called component-$pluginName\n"
 
-sed -i '' "s/NewPlugin/$formattedPluginName/g" newplugin.php
-mv newplugin.php $pluginName.php
+echo -e "Moving folders\n";
+sed -i '' "s/NewPlugin/$formattedPluginName/g" newplugin.php >> $INSTALL_DIR/install.log 2>&1
+mv newplugin.php $pluginName.php >> $INSTALL_DIR/install.log 2>&1
 
 mv src/FlexPress/Plugins/NewPlugin src/FlexPress/Plugins/$formattedPluginName
-mv src/FlexPress/Plugins/$formattedPluginName/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
+mv src/FlexPress/Plugins/$formattedPluginName/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php >> $INSTALL_DIR/install.log 2>&1
 
-find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
-sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json
-sed -i '' "s/plugin-framework/$pluginName/g" composer.json
+echo -e "Replacing instances in files...\n"
+find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \; >> $INSTALL_DIR/install.log 2>&1
+sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
+sed -i '' "s/plugin-framework/$pluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
 
-composer dump-autoload
+composer dump-autoload >> $INSTALL_DIR/install.log 2>&1
 
-touch .installdone
+touch .installdone >> $INSTALL_DIR/install.log 2>&1
+
+echo -e "All done\n";
