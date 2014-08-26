@@ -38,4 +38,6 @@ find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
 sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json
 sed -i '' "s/plugin-framework/$pluginName/g" composer.json
 
+composer dump-autoload
+
 touch .installdone
