@@ -32,9 +32,11 @@ echo -e "Righto, lets create a plugin called component-$pluginName\n";
 
 mv newplugin.php $pluginName.php
 
-mv src/FlexPress/Plugins/NewPlugin src/FlexPress/Plugins/$pluginName
 mv src/FlexPress/Plugins/NewPlugin/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
+mv src/FlexPress/Plugins/NewPlugin src/FlexPress/Plugins/$formattedPluginName
 
 find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
+sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json
+sed -i '' "s/newplugin/$pluginName/g" composer.json
 
 touch .installdone
