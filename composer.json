@@ -5,7 +5,7 @@
     "type": "project",
     "license": "MIT",
     "scripts": {
-        "post-create-project-cmd": [
+        "post-package-install": [
             "./install.sh"
         ]
     },
