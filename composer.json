@@ -3,6 +3,14 @@
     "description": "FlexPress based plugin",
     "minimum-stability": "stable",
     "license": "MIT",
+    "scripts": {
+        "post-install-cmd": [
+            "./install.sh"
+        ]
+    },
+    "require": {
+        "pimple/pimple": "2.0.*"
+    },
     "autoload": {
         "psr-4": {
             "FlexPress\\Plugins\\NewPlugin\\": "src/FlexPress/Plugins/NewPlugin"

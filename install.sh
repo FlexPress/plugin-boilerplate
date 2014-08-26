@@ -16,8 +16,6 @@ while true; do
     fi
 done
 
-echo -e "\n";
-
 formattedPluginName='';
 while true; do
     read -p "Please enter the formatted plugin name e.g. twitter will become Twitter: " name
