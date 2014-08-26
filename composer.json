@@ -5,7 +5,8 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "pimple/pimple": "2.0.*"
+        "pimple/pimple": "2.0.*",
+        "flexpress/component-plugin": "dev-master"
     },
     "autoload": {
         "psr-4": {
