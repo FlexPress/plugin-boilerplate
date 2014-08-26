@@ -42,8 +42,6 @@ find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \; >> 
 sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
 sed -i '' "s/plugin-framework/$pluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
 
-composer dump-autoload >> $INSTALL_DIR/install.log 2>&1
-
 touch .installdone >> $INSTALL_DIR/install.log 2>&1
 
 echo -e "All done\n";
