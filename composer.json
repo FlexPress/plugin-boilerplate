@@ -4,11 +4,6 @@
     "minimum-stability": "stable",
     "type": "project",
     "license": "MIT",
-    "scripts": {
-        "post-package-install": [
-            "./install.sh"
-        ]
-    },
     "require": {
         "pimple/pimple": "2.0.*"
     },
