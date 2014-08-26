@@ -1,8 +1,9 @@
 #! /bin/bash
 
-if [-f .installdone ] then
+if [ -f .installdone ]
+then
     echo -e "Error, installer has already been ran, if something went wrong please re-download the project\n";
-    exit 0
+    exit 0;
 fi
 
 pluginName='';
