@@ -36,6 +36,6 @@ mv src/FlexPress/Plugins/$formattedPluginName/NewPlugin.php src/FlexPress/Plugin
 
 find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
 sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json
-sed -i '' "s/newplugin/$pluginName/g" composer.json
+sed -i '' "s/plugin-framework/$pluginName/g" composer.json
 
 touch .installdone

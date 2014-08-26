@@ -1,5 +1,5 @@
 {
-    "name": "flexpress/newplugin",
+    "name": "flexpress/plugin-framework",
     "description": "FlexPress based plugin",
     "minimum-stability": "stable",
     "license": "MIT",
