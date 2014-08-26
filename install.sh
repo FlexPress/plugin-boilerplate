@@ -35,6 +35,6 @@ mv newplugin.php $pluginName.php
 mv src/FlexPress/Plugins/NewPlugin src/FlexPress/Plugins/$pluginName
 mv src/FlexPress/Plugins/NewPlugin/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
 
-find src/ -type f -exec sed -i -e 's/NewPlugin/$formattedPluginName/g' {} \;
+find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
 
 touch .installdone
