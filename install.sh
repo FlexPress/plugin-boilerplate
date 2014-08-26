@@ -33,8 +33,8 @@ echo -e "Righto, lets create a plugin called component-$pluginName\n";
 sed -i '' "s/NewPlugin/$formattedPluginName/g" newplugin.php
 mv newplugin.php $pluginName.php
 
-mv src/FlexPress/Plugins/NewPlugin/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
 mv src/FlexPress/Plugins/NewPlugin src/FlexPress/Plugins/$formattedPluginName
+mv src/FlexPress/Plugins/$formattedPluginName/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
 
 find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \;
 sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json
