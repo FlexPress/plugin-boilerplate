@@ -30,6 +30,7 @@ done
 
 echo -e "Righto, lets create a plugin called component-$pluginName\n";
 
+sed -i '' "s/NewPlugin/$formattedPluginName/g" newplugin.php
 mv newplugin.php $pluginName.php
 
 mv src/FlexPress/Plugins/NewPlugin/NewPlugin.php src/FlexPress/Plugins/$formattedPluginName/$formattedPluginName.php
