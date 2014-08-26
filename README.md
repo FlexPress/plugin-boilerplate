@@ -1,4 +1,3 @@
-plugin-boilerplate
-==================
+# FlexPress plugin boilerplate framework
 
-Boilerplate plugin framework
+Boilerplate framework for creating plugins.
