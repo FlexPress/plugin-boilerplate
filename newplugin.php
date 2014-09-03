@@ -11,6 +11,11 @@
  */
 
 use FlexPress\Plugins\NewPlugin\DependencyInjection\DependencyInjectionContainer;
+// Include autoloader if installed on it's own.
+$autoloadFile = __DIR__ . '/vendor/autoload.php';
+if (file_exists($autoloadFile)) {
+    require_once($autoloadFile);
+}
 
 // Dependency Injection
 $dic = new DependencyInjectionContainer();

@@ -40,7 +40,7 @@ mv src/FlexPress/Plugins/$formattedPluginName/NewPlugin.php src/FlexPress/Plugin
 echo -e "Replacing instances in files...\n"
 find src/ -type f -exec sed -i '' "s/NewPlugin/$formattedPluginName/g" {} \; >> $INSTALL_DIR/install.log 2>&1
 sed -i '' "s/NewPlugin/$formattedPluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
-sed -i '' "s/plugin-framework/$pluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
+sed -i '' "s/plugin-framework/plugin-$pluginName/g" composer.json >> $INSTALL_DIR/install.log 2>&1
 
 touch .installdone >> $INSTALL_DIR/install.log 2>&1
 
